@@ -2,6 +2,9 @@
 
 okProxy is the easiest way to validate a list of proxies and select the working ones
 
+### Note
+* You need to install both Halo and progress Packages , or you can get rid of them from the code
+
 
 ### Format
 ```bash
