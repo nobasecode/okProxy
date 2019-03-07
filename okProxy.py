@@ -1,9 +1,13 @@
+# NoBaseCode - Mohamed LAABID
+# Note: you need to install both halo and progress packages , or you can get rid of them from the code
+
 import requests
 import json
 import random
 from halo import Halo
+from progress.bar import Bar
 
-spinner = Halo(text='Wait Wait , just wait and watch', spinner='dots',color='green')
+spinner = Halo(text='Give it time', spinner='dots',color='green')
 
 def get_proxies():
     proxies = []
@@ -15,16 +19,20 @@ def get_proxies():
     return proxies
 
 proxies = get_proxies()
+bar = Bar('Processing', max=len(proxies))
 
 okProxies = []
 
 spinner.start()
 for proxy in proxies:
+    bar.next()
     try:
         r = requests.get('http://ip.42.pl/raw',proxies={'http': proxy}).text
-        spinner.succeed(proxy+" a good IP")
+        spinner.succeed(proxy+" work fine")
         okProxies.append(proxy)        
     except:
-        spinner.fail(proxy+" a very bad IP")
+        spinner.fail(proxy+" a bad IP")
 
-print(okProxies)
+bar.finish()
+with open('valideProxies.txt', 'w') as f:
+    f.write("\n".join(okProxies))
