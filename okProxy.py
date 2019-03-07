@@ -1,5 +1,5 @@
 # NoBaseCode - Mohamed LAABID
-# Note: you need to install both halo and progress packages , or you can get rid of them from the code
+# Note: you need to install both halo and progress packages , or you can get rid of them in the code
 
 import requests
 import json
