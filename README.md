@@ -44,23 +44,6 @@ IP [1]
    + = Yes
    – = No
 
-
-#############################
-### proxy-list-status.txt ###
-#############################
-
-IP [1]
-|
-| Status [2]
-|   |_ _ _ _ _
-|             |
-200.2.125.90: success
-
-
-1. IP address
-2. Status
-   success = low latency (0-9 seconds)
-   failure = high latency (10+ seconds)
 ```
 
 ### Proxy server data
